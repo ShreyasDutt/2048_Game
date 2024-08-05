@@ -1,0 +1,193 @@
+
+    @font-face {
+      font-family: "ClearSans";
+      src: url(Fonts/ClearSans-Regular.ttf);
+    }
+    @font-face {
+      font-family: "Mario";
+      src: url(Fonts/SuperMarioBros.ttf);
+    }
+
+    html,
+    body {
+      font-family: ClearSans;
+      background-color: #f9f6f2;
+      background-repeat: no-repeat;
+      background-size: 100vw 100vh;
+    }
+
+    .container {
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: #bbada0;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 107px);
+      grid-template-rows: repeat(4, 107px);
+      grid-gap: 8px;
+    }
+
+    .block {
+      margin-left: 29px;
+      margin-right: -24px;
+      margin-top: 26px;
+      margin-bottom: -26px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 38px;
+      color: #f9f6f2;
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .block.move {
+      animation: moveBlock 0.2s ease-in-out;
+    }
+
+    @keyframes moveBlock {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .block.new {
+      animation: spawnBlock 0.2s ease-out;
+    }
+
+    @keyframes spawnBlock {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50%{
+        opacity: 0.6;
+        transform: scale(0.6);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .score {
+      left: 3%;
+      top: 29%;
+      font-size: 50px;
+      font-weight: bold;
+      color: #8f7a66;
+      position: absolute;
+    }
+
+    #highscore {
+      left: 3%;
+      top: 40%;
+      font-size: 50px;
+      font-weight: bold;
+      color: #8f7a66;
+      position: absolute;
+    }
+
+    #reset{
+        border: none;
+        background: #8f7a66;
+        border-radius: 2px;
+        color: #f9f6f2;
+        font-size: 19px;
+        font-weight: 600;
+        height: 50px;
+        width: 140px;
+        position: absolute;
+        top: 52%;
+        left: 3%;
+        cursor: pointer;
+    }
+    
+    #Animate{
+      left: 13%;
+      top: 26%;
+      color: #8f7a66;
+      position: absolute;
+      font-size: 20px;
+      font-weight: 700;
+      display: none;
+      animation: 0.5s ease forwards;
+    }
+    
+    #gameover{
+      width: 500px;
+      height: 500px;
+      background-color: rgba(238, 228, 218, 0.73);
+      position: absolute;
+      z-index: 1;
+      top: 15.8%;
+      border-radius: 8px;
+      animation: 0.8s ease;
+      display: none;
+    }
+
+    #Text{
+      margin-left: 18%;
+      color: #8f7a66;
+      font-size: 50px;
+      font-family: Mario;
+      user-select: none;
+      margin-top: 35%;
+      font-weight: bold;
+      
+    }
+
+
+    #outer{
+      display: flex;
+      flex-direction: column;
+      align-items: center ;
+    }
+    
+    #TryAgain{
+      font-family: ClearSans;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      display: inline-block;
+      background: #8f7a66;
+      border-radius: 3px;
+      padding: 0px 40px;
+      color: #f9f6f2;
+      height: 45px;
+      cursor: pointer;
+      margin-left: 36%;
+      animation: Tryagain 1s ease ;
+    }
+
+    @keyframes Tryagain {
+      0% {
+        opacity: 0.1;
+      }
+      25%{
+        opacity: 0.25;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      75%{
+        opacity: 0.75;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
